@@ -16,8 +16,8 @@ namespace Testing.ConceringTweetCreation
         }
         private void Arrange()
         {
-            var Subject = new TweetClient();
-            Subject.Tweet();
+            //var Subject = new TweetClient();
+            //Subject.Tweet();
         }
         private void Act()
         {

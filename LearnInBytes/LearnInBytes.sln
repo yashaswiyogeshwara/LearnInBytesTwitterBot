@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing", "Testing\Testing.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clients", "Clients\Clients.csproj", "{03CA70E5-9FC6-412C-B7AB-FF0C3FFF89B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{744D243C-3B2F-423E-BDA6-B085C2912D47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{744D243C-3B2F-423E-BDA6-B085C2912D47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterServices", "TwitterServices\TwitterServices.csproj", "{31B2A09A-E2F1-4721-94A2-D6A0209BA633}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{744D243C-3B2F-423E-BDA6-B085C2912D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{744D243C-3B2F-423E-BDA6-B085C2912D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{744D243C-3B2F-423E-BDA6-B085C2912D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B2A09A-E2F1-4721-94A2-D6A0209BA633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B2A09A-E2F1-4721-94A2-D6A0209BA633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B2A09A-E2F1-4721-94A2-D6A0209BA633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B2A09A-E2F1-4721-94A2-D6A0209BA633}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

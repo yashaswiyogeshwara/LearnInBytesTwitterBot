@@ -1,5 +1,7 @@
-﻿using System.Net.Http;
+﻿using Domain.Models;
+using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Clients.Clients
@@ -12,10 +14,11 @@ namespace Clients.Clients
             HttpClient = httpClient;
         }
 
-        public async Task CreateTweet(string tweet)
+        public async Task<HttpResponseMessage> CreateTweet(CreateTweetModel tweet)
         {
-            StringContent content = new StringContent(tweet, Encoding.UTF8, "application/json");
-            await HttpClient.PostAsync("tweets", content);
+            StringContent content = new StringContent(JsonSerializer.Serialize(tweet), Encoding.UTF8, "application/json");
+            HttpResponseMessage responseMessage = await HttpClient.PostAsync("tweets", content);
+            return responseMessage;
         }
     }
 }

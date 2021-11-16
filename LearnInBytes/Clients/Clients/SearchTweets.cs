@@ -17,18 +17,23 @@ namespace Clients.Clients
         {
             HttpClient = httpClient;
         }
-        public async Task<RecentSearchModel> SearchTweet(string queryString) {
-            RecentSearchModel result = null;
+        public async Task<SearchTweetResponseModel> SearchTweet(SearchTweetModel searchModel) 
+        {
+            SearchTweetResponseModel result = null;
             UriBuilder builder = new UriBuilder("recent");
             var query = HttpUtility.ParseQueryString(builder.Query);
-            query["query"] = queryString;
+            query["query"] = searchModel.Query;
+            if(!String.IsNullOrEmpty(searchModel.FromId))
+            {
+                query["since_id"] = searchModel.FromId;
+            }   
             builder.Query = query.ToString();
             string url = builder.ToString();
             HttpResponseMessage response = await HttpClient.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
                 string message = await response.Content.ReadAsStringAsync();
-                result = JsonSerializer.Deserialize<RecentSearchModel>(message);
+                result = JsonSerializer.Deserialize<SearchTweetResponseModel>(message);
             }
             return result;
         }
